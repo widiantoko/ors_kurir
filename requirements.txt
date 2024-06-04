@@ -33,3 +33,5 @@ tenacity==8.2.3
 toml==0.10.2
 urllib3==2.0.4
 polyline==2.0.2
+openpyxl==3.1.2
+osrm-py==0.5
