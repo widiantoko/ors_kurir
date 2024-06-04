@@ -40,7 +40,7 @@ jarak_A=round(data_A['routes'][0]['distance']/1000,2)
 
 koordinat_trip_A = polyline.decode(lokasi_A)
 
-#st.text(result)
+
 st.text(f"Estimasi Jarak Tempuh Kurir {jarak_A} Km")
 
 
