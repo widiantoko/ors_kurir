@@ -94,7 +94,6 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 for index, row in data_kurir.iterrows():
     folium.Marker(
         location=[row['Lat_dest'], row['Long_dest']],
-        popup=row['Popup'],
         tooltip=folium.Tooltip(row['No. Connote']),
         icon=folium.Icon(icon='info-sign')
     ).add_to(mx)
