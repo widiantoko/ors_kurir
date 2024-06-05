@@ -16,6 +16,9 @@ data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
+new=pd.DataFrame(new)
+
+
 
 
 cito_lat='106.812288,-6.210011;'
