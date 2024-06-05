@@ -30,6 +30,9 @@ coords_tuples = [eval(coord) for coord in pin_kiriman]
 konid=data_kurir['No. Connote'].tolist()
 #st.text(konid)
 
+jam=data_kurir['Waktu Listing'].str[8:]
+st.text(jam)
+
 result = ''.join([cito_lat, rute_kurir])
 
 
