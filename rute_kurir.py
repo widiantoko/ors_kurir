@@ -86,11 +86,11 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
 for cn in konid:
-       folium.Marker(tooltip=cn,icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+       folium.Marker(tooltip=cn, icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
         
 for loc in coords_tuples:
-       folium.Marker(location=loc,icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+       folium.Marker(location=loc, icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
                 
