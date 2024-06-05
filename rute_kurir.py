@@ -39,7 +39,7 @@ st.text(rec)
 #st.text(rec_2)
 
 
-list_of_tuples = [tuple(x) for x in data_kurir.values]
+list_of_tuples = [tuple(x) for x in data_kurir]
 st.text(list_of_tuples)
 
 
