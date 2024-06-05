@@ -27,7 +27,7 @@ coords_tuples = [eval(coord) for coord in pin_kiriman]
 konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 st.text(konid)
 
-konid1=data_kurir['No.Connote'].tolist()
+konid1=data_kurir['No.Connote']
 st.text(konid1)
 
 result = ''.join([cito_lat, rute_kurir])
