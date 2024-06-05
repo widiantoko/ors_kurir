@@ -14,6 +14,10 @@ st.subheader("Simulasi Rute Delivery Kurir")
 
 data_kurir=pd.read_excel('data/test.xlsx')
 
+new=pd.read_excel('data/test.xlsx')
+
+st.dataframe(new.head(20))
+
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
 
