@@ -23,20 +23,18 @@ data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
 rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 rute_kurir = ';'.join(rute_kiriman)
 
-pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
-coords_tuples = [eval(coord) for coord in pin_kiriman]
+#pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
+#coords_tuples = [eval(coord) for coord in pin_kiriman]
 
-pin_new=data_kurir.apply(lambda row: f"koord: ({row['Lat_dest']},{row['Long_dest']}), jam:{row['jam']}", axis=1).tolist()
-
-
-konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
+#pin_new=data_kurir.apply(lambda row: f"koord: ({row['Lat_dest']},{row['Long_dest']}), jam:{row['jam']}", axis=1).tolist()
+#konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 
 
 result = ''.join([cito_lat, rute_kurir])
 
 #rec_1=data_kurir.to_dict('records')
-st.text(konid)
-st.text(len(konid))
+#st.text(konid)
+#st.text(len(konid))
 
 #rec_2=data_kurir.to_dict('dict')
 #st.text(rec_2)
@@ -90,6 +88,8 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 #for loc in coords_tuples:
 #        folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+
+
 
 for index, row in data_kurir.iterrows():
     folium.Marker(
