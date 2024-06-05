@@ -32,7 +32,7 @@ urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_dup
 
 #st.text(urut_tgl)
 
-opt_kurir = st.selectbox("Nama Kurir:",urut_nama))
+opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 
 #st.write("You selected:", opt_kurir)
 
