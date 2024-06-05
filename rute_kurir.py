@@ -30,6 +30,7 @@ pin_new=data_kurir.apply(lambda row: f"koord: ({row['Lat_dest']},{row['Long_dest
 
 
 konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
+konid=konid.to_dict('list')
 
 result = ''.join([cito_lat, rute_kurir])
 
