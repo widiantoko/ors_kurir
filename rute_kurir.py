@@ -16,7 +16,7 @@ data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
-
+st.text(new)
 
 
 st.dataframe(new.head(10))
