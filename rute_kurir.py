@@ -28,7 +28,8 @@ rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']
 rute_kurir = ';'.join(rute_kiriman)
 
 
-new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True)
+urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True)
+st.text(urut_tgl)
 
 opt_kurir = st.selectbox(
     "Nama Kurir:",
