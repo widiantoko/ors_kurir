@@ -30,44 +30,20 @@ rute_kurir = ';'.join(rute_kiriman)
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
-#st.text(urut_tgl)
+
 
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
-
-#st.write("You selected:", opt_kurir)
-
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
-#st.write("You selected:", opt_kurir)
-
-#new1=new[(new['Nama Kurir']==opt_kurir) and (new['Tgl']==opt_tgl)]
 
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
-result = new[mask]
-#print(result)
+new_data = new[mask]
 
-#new1= new.apply(lambda x: x[x['Nama kurir'] == opt_kurir and x['Tgl']==opt_tgl])
+st.dataframe(new_data)
 
-st.dataframe(result)
-
-#pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
-#coords_tuples = [eval(coord) for coord in pin_kiriman]
-
-#pin_new=data_kurir.apply(lambda row: f"koord: ({row['Lat_dest']},{row['Long_dest']}), jam:{row['jam']}", axis=1).tolist()
-#konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 
 
 result = ''.join([cito_lat, rute_kurir])
-
-#rec_1=data_kurir.to_dict('records')
-#st.text(konid)
-#st.text(len(konid))
-
-#rec_2=data_kurir.to_dict('dict')
-#st.text(rec_2)
-
-#rec_3=data_kurir.to_dict('list')
-#st.text(rec_3)
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
