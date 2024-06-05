@@ -97,7 +97,6 @@ for loc in coords_tuples:
                 
 
 
-
 st_data=st_folium(mx, width=900)
 
 
