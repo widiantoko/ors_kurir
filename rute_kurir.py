@@ -48,7 +48,8 @@ st.text(rute_kiriman)
 st.text(new_data_kiriman)
 st.text(new_data_kurir)
 
-result = ''.join([cito_lat, rute_kurir])
+#result = ''.join([cito_lat, rute_kurir])
+result = ''.join([cito_lat, new_data_kurir])
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
