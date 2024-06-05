@@ -87,10 +87,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 for loc in coords_tuples:
-        for cn in konid:
-                folium.Marker(location=loc, 
-                              tooltip=f"""<p style='color:#3288bd; text-align:center; 
-                              border-radius:3px; font-size:12px; line-height:1px; padding-top:8px'>{cn}""", 
+        folium.Marker(location=loc, tooltip=konid,
                               icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
 
