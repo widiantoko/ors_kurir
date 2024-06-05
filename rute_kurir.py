@@ -51,9 +51,7 @@ response_A = requests.get(url_A)
 data_A = response_A.json()
 
 lokasi_A=data_A['routes'][0]['geometry']
-
 jarak_A=round(data_A['routes'][0]['distance']/1000,2)
-
 
 
 koordinat_trip_A = polyline.decode(lokasi_A)
@@ -82,11 +80,9 @@ folium.plugins.Fullscreen().add_to(mx)
 
 AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white', dash_array=[30,30]).add_to(mx)
 
-#folium.PolyLine(
-#locations=koordinat_trip_A,
-#color='green',
-#weight=3,
-#opacity=0.9).add_to(mx)green
+
+tooltip = folium.Tooltip(data_kurir['No. Connote'], permanent=True)
+
 
 folium.Marker(location=cito_loc, tooltip= text_Cito, 
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
@@ -94,7 +90,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 for loc in coords_tuples:
-        folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+        folium.Marker(location=loc, tooltip=tooltip, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
 
        
