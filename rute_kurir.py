@@ -40,7 +40,6 @@ mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
 
 
-
 new_data_kiriman= new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
 new_data_kurir = ';'.join(new_data_kiriman)
 
