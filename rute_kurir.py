@@ -27,19 +27,16 @@ data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
 rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 rute_kurir = ';'.join(rute_kiriman)
 
-
+urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
-st.text(urut_tgl)
+#st.text(urut_tgl)
 
-opt_kurir = st.selectbox(
-    "Nama Kurir:",
-    new['Nama Kurir'].drop_duplicates(keep='last'))
+opt_kurir = st.selectbox("Nama Kurir:",urut_nama))
 
-st.write("You selected:", opt_kurir)
+#st.write("You selected:", opt_kurir)
 
-opt_tgl = st.selectbox(
-    "Tanggal Delivery:", urut_tgl)
+opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 #st.write("You selected:", opt_kurir)
 
