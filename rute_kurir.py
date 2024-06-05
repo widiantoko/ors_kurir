@@ -47,15 +47,14 @@ new_data = new[mask]
 
 st.table(new_data)
 
-
-new_data_kiriman= new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
-
-if new_data_kiriman==True:
-        new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
-else: 
+if new_data == None:
         None
+else:
+        xyx=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
-new_data_kurir = ';'.join(new_data_kiriman)
+
+
+new_data_kurir = ';'.join(xyx)
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
