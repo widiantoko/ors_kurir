@@ -29,6 +29,7 @@ rute_kurir = ';'.join(rute_kiriman)
 
 
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
+
 st.text(urut_tgl)
 
 opt_kurir = st.selectbox(
@@ -38,8 +39,7 @@ opt_kurir = st.selectbox(
 st.write("You selected:", opt_kurir)
 
 opt_tgl = st.selectbox(
-    "Tanggal Delivery:",
-    new['Tgl'].drop_duplicates(keep='last'))
+    "Tanggal Delivery:", urut_tgl)
 
 #st.write("You selected:", opt_kurir)
 
