@@ -32,8 +32,8 @@ st.text(konid)
 
 #st.text(konid_1)
 
-record=data_kurir.to_dict('series')
-st.text(record)
+rec=data_kurir.to_dict('records')
+st.text(rec)
 
 result = ''.join([cito_lat, rute_kurir])
 
