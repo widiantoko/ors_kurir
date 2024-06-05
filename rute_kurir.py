@@ -42,6 +42,8 @@ opt_tgl = st.selectbox(
 
 new1=new[(new['Nama Kurir']==opt_kurir) and (new['Tgl']==opt_tgl)]
 
+new1= new.apply(lambda x: x[x['Nama kurir'] == opt_kurir and x['Tgl']==opt_tgl])
+
 st.dataframe(new1)
 
 #pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
