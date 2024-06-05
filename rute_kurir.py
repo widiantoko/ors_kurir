@@ -100,7 +100,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-for index, row in data_kurir.iterrows():
+for index, row in new.iterrows():
     folium.Marker(
         location=[row['Lat_dest'], row['Long_dest']],
         tooltip= 
