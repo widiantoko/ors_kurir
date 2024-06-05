@@ -92,12 +92,12 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-#for loc in coords_tuples:
-#                folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+for loc in coords_tuples:
+        folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
-for loc in pin_new:
-        folium.Marker(location=loc['koord'], tooltip=loc['jam'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+#for loc in pin_new:
+#        folium.Marker(location=loc['koord'], tooltip=loc['jam'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
 
 
