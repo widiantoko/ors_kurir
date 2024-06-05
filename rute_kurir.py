@@ -16,7 +16,7 @@ data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
-st.dataframe(new.head(20))
+#st.dataframe(new.head(20))
 
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
@@ -28,11 +28,19 @@ rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']
 rute_kurir = ';'.join(rute_kiriman)
 
 
-option = st.selectbox(
+opt_kurir = st.selectbox(
     "Nama Kurir:",
     new['Nama Kurir'].drop_duplicates(keep='last'))
 
-st.write("You selected:", option)
+st.write("You selected:", opt_kurir)
+
+opt_tgl = st.selectbox(
+    "Nama Kurir:",
+    new['tgl'].drop_duplicates(keep='last'))
+
+#st.write("You selected:", opt_kurir)
+
+
 
 #pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
 #coords_tuples = [eval(coord) for coord in pin_kiriman]
