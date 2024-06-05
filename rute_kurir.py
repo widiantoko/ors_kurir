@@ -14,7 +14,7 @@ st.subheader("Simulasi Rute Delivery Kurir")
 
 data_kurir=pd.read_excel('data/test.xlsx')
 
-new=pd.read_excel('data/test.xlsx')
+new=pd.read_excel('data/new.xlsx')
 
 st.dataframe(new.head(20))
 
