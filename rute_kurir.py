@@ -24,7 +24,7 @@ rute_kurir = ';'.join(rute_kiriman)
 pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
 coords_tuples = [eval(coord) for coord in pin_kiriman]
 
-konid=data_kurir.apply(lambda row: f"({row['No. Connote']})", axis=1).tolist()
+konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 st.text(konid)
 
 konid1=data_kurir['No.Connote'].tolist()
