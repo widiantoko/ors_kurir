@@ -29,7 +29,7 @@ coords_tuples = [eval(coord) for coord in pin_kiriman]
 pin_new=data_kurir.apply(lambda row: f"koord: ({row['Lat_dest']},{row['Long_dest']}), jam:{row['jam']}", axis=1).tolist()
 
 
-konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).to_dict('records')
+konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 
 
 result = ''.join([cito_lat, rute_kurir])
