@@ -35,8 +35,8 @@ opt_kurir = st.selectbox(
 st.write("You selected:", opt_kurir)
 
 opt_tgl = st.selectbox(
-    "Nama Kurir:",
-    new['tgl'].drop_duplicates(keep='last'))
+    "Tanggal Delivery:",
+    new['Tgl'].drop_duplicates(keep='last'))
 
 #st.write("You selected:", opt_kurir)
 
