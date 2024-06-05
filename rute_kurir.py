@@ -18,20 +18,22 @@ data_kurir=pd.read_excel('data/test.xlsx')
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
 
+data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
+
+
 rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 rute_kurir = ';'.join(rute_kiriman)
 
 pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
 coords_tuples = [eval(coord) for coord in pin_kiriman]
 
-#konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
+konid=data_kurir.apply(lambda row: f"{row['No. Connote']}, {row['jam']}", axis=1).tolist()
 #st.text(konid)
 
-konid=data_kurir['No. Connote'].tolist()
+#konid=data_kurir['No. Connote'].tolist()
 #st.text(konid)
 
-jam=data_kurir['Waktu Listing'].str[11:]
-st.text(jam)
+
 
 result = ''.join([cito_lat, rute_kurir])
 
