@@ -39,17 +39,17 @@ opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
-#mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
-#new_data = new[mask]
+mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+new_data = new[mask]
         
 
-def pjg(opt_kurir, opt_tgl):
-    try:
-        len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
-        if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
-                return new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
-    except:
-        None
+#def pjg(opt_kurir, opt_tgl):
+#    try:
+#        len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
+#        if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
+#                return new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
+#    except:
+#        None
 
 
 
@@ -57,7 +57,7 @@ def pjg(opt_kurir, opt_tgl):
 
 #st.dataframe(new_data)
 
-st.table(pjg)
+st.table(new_data)
 
 #pjg=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
