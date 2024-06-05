@@ -28,14 +28,16 @@ pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']}
 coords_tuples = [eval(coord) for coord in pin_kiriman]
 
 konid=data_kurir.apply(lambda row: f"{row['No. Connote']}; {row['jam']}", axis=1).tolist()
-st.text(konid)
 
-#st.text(konid_1)
+result = ''.join([cito_lat, rute_kurir])
 
 rec=data_kurir.to_dict('records')
 st.text(rec)
 
-result = ''.join([cito_lat, rute_kurir])
+
+rec_2=data_kurir.values.tolist()
+st.text(rec_2)
+
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
