@@ -31,12 +31,15 @@ konid=data_kurir.apply(lambda row: f"{row['No. Connote']}; {row['jam']}", axis=1
 
 result = ''.join([cito_lat, rute_kurir])
 
-rec=data_kurir.to_dict('records')
-st.text(rec)
+rec_1=data_kurir.to_dict('records')
+st.text(rec_1)
 
 
-#rec_2=data_kurir.to_dict('records')
-#st.text(rec_2)
+rec_2=data_kurir.to_dict('dict')
+st.text(rec_2)
+
+rec_3=data_kurir.to_dict('list')
+st.text(rec_3)
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
