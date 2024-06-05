@@ -30,7 +30,7 @@ rute_kurir = ';'.join(rute_kiriman)
 
 option = st.selectbox(
     "Nama Kurir:",
-    new['Nama Kurir'])
+    new['Nama Kurir'].drop_duplicates(keep='last'))
 
 st.write("You selected:", option)
 
