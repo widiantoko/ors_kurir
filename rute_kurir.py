@@ -30,8 +30,8 @@ coords_tuples = [eval(coord) for coord in pin_kiriman]
 konid=data_kurir.apply(lambda row: f"{row['No. Connote']}; {row['jam']}", axis=1).tolist()
 st.text(konid)
 
-#konid=data_kurir['No. Connote'].tolist()
-#st.text(konid)
+konid_1=data_kurir['No. Connote'].tolist()
+st.text(konid_1)
 
 
 
