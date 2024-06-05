@@ -41,6 +41,14 @@ new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
         
 
+def pjg(opt_kurir, opt_tgl):
+    try:
+        len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
+        if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
+                return (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+    except:
+        pass
+
 
 
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
@@ -51,10 +59,10 @@ new_data = new[mask]
 
 st.table(new_data)
 
-xyx=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
+pjg=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
-new_data_kurir = ';'.join(xyx)
+new_data_kurir = ';'.join(pjg)
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
