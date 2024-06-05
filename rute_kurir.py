@@ -54,8 +54,6 @@ text_Cito=f"""<p style='color:#3288bd; text-align:center; border-radius:3px;
         font-size:12px; line-height:3px; padding-top:8px'>CitoXpress"""
 
 
-for cn in konid:
-        konid
 
 text2=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
         font-size:12px; line-height:3px; padding-top:8px'>{konid} km"""
