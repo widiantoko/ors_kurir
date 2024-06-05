@@ -88,8 +88,6 @@ folium.plugins.Fullscreen().add_to(mx)
 AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white', dash_array=[30,30]).add_to(mx)
 
 
-#tooltip = folium.Tooltip(konid, permanent=False)
-
 
 folium.Marker(location=cito_loc, tooltip= text_Cito, 
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
