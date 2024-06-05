@@ -31,7 +31,6 @@ urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
 
-
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
