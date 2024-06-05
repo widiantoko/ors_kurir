@@ -62,7 +62,7 @@ new_data = new[mask]
 
 st.table(new_data)
 
-#pjg=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
+new_data_01=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
 new_data_kurir = ';'.join(rute_new)
