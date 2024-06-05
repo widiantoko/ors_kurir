@@ -66,9 +66,9 @@ mx = folium.Map(location=cito_loc, zoom_start=12)
 text_Cito=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
         font-size:12px; line-height:1px; padding-top:8px'>CitoXpress"""
 
-for x in konid:
-        text2=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
-        font-size:12px; line-height:3px; padding-top:8px'>{x}"""
+
+#text2=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
+#        font-size:12px; line-height:3px; padding-top:8px'>{x}"""
 
 
 #text3=f"""<p style='color:#3288bd; text-align:center; border-radius:3px;  
@@ -94,7 +94,9 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 for index, row in data_kurir.iterrows():
     folium.Marker(
         location=[row['Lat_dest'], row['Long_dest']],
-        tooltip=folium.Tooltip(row['No. Connote']),
+        tooltip= f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
+        font-size:12px; line-height:3px; 
+        padding-top:8px'>{folium.Tooltip(row['No. Connote'])}""",
         icon=folium.Icon(icon='envelope')
     ).add_to(mx)
 
