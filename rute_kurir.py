@@ -30,6 +30,9 @@ data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
 rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 rute_kurir = ';'.join(rute_kiriman)
 
+
+rute_new= new.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
+
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
@@ -62,7 +65,7 @@ st.table(new_data)
 #pjg=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
-new_data_kurir = ';'.join(pjg)
+new_data_kurir = ';'.join(rute_new)
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
