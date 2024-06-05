@@ -25,7 +25,7 @@ pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']}
 coords_tuples = [eval(coord) for coord in pin_kiriman]
 
 konid=data_kurir.apply(lambda row: f"({row['No. Connote']})", axis=1).tolist()
-st.text(konid)
+#st.text(konid)
 
 result = ''.join([cito_lat, rute_kurir])
 
@@ -74,9 +74,6 @@ AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white
 
 folium.Marker(location=cito_loc, tooltip= text_Cito, icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
-yx=[]
-for cn in konid:
-        konid
 
 for loc in coords_tuples:
         for cn in konid:
