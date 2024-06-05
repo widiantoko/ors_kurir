@@ -34,7 +34,7 @@ konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 result = ''.join([cito_lat, rute_kurir])
 
 #rec_1=data_kurir.to_dict('records')
-st.text(pin_new)
+st.text(konid)
 
 #rec_2=data_kurir.to_dict('dict')
 #st.text(rec_2)
