@@ -92,10 +92,18 @@ AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white
 folium.Marker(location=cito_loc, tooltip= text_Cito, 
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
+for x in konid:
+        try:
+                x
+        
+        except:
+                None
+
+        
+
 
 
 for loc in coords_tuples:
-        for x in konid:
                 folium.Marker(location=loc, tooltip=x, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
