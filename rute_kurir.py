@@ -85,12 +85,15 @@ AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white
 folium.Marker(location=cito_loc, tooltip= text_Cito, 
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
+for cn in konid:
+       folium.Marker(tooltip=cn,icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
+        
 for loc in coords_tuples:
-        for cn in konid_1:
-                folium.Marker(location=loc, tooltip=cn,
-                              icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+       folium.Marker(location=loc,icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
+       
+                
 
 
 
