@@ -95,7 +95,7 @@ for index, row in data_kurir.iterrows():
     folium.Marker(
         location=[row['Lat_dest'], row['Long_dest']],
         tooltip= 
-        f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
+        f"""<p style='color:#3288bd; text-align:center; border-radius:1px; 
 #        font-size:14px; line-height:3px; padding-top:8px'>{row['No. Connote']}""",
         icon=folium.Icon(icon_color='white', prefix='fa',icon='envelope')).add_to(mx)
 
