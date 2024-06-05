@@ -40,7 +40,9 @@ opt_tgl = st.selectbox(
 
 #st.write("You selected:", opt_kurir)
 
+new1=new['Nama Kurir']==opt_kurir and new['Tgl']==opt_tgl
 
+st.dataframe(new1)
 
 #pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
 #coords_tuples = [eval(coord) for coord in pin_kiriman]
