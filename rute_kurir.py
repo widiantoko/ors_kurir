@@ -32,7 +32,7 @@ st.text(konid)
 
 #st.text(konid_1)
 
-record=data_kurir.to_dict()
+record=data_kurir.to_dict('record')
 st.text(record)
 
 result = ''.join([cito_lat, rute_kurir])
@@ -87,15 +87,12 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-kiriman=data_kurir['No. Connote', 'Lat_dest', 'Long_dest','jam'].to_dict()
-st.text(kiriman)
-
-#for loc in coords_tuples:
-#       folium.Marker(location=loc, icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+for loc in coords_tuples:
+       folium.Marker(location=loc, icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
-for loc in kiriman:
-       folium.Marker(location=[loc['Lat_dest'], loc['Long_dest']], tooltip=loc['No Connote'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+#for loc in coords_tuples:
+#       folium.Marker(location=[loc['Lat_dest'], loc['Long_dest']], tooltip=loc['No Connote'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
 
 
