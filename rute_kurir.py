@@ -98,7 +98,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-for index, row in new.iterrows():
+for index, row in new_data.iterrows():
     folium.Marker(
         location=[row['Lat'], row['Long']],
         tooltip= 
