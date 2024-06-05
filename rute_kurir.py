@@ -87,7 +87,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-kiriman=data_kurir[['No.Connote', 'Lat_dest', 'Long_dest','jam']].to_dict
+kiriman=data_kurir['No.Connote', 'Lat_dest', 'Long_dest','jam'].to_dict()
 st.text(kiriman)
 
 for loc in coords_tuples:
