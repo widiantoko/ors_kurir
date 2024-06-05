@@ -41,10 +41,12 @@ new_data = new[mask]
 
 
 
-new_data_rute= new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
+new_data_kiriman= new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
+new_data_kurir = ';'.join(new_data_kiriman)
 
 st.text(rute_kiriman)
-st.text(new_data_rute)
+st.text(new_data_kiriman)
+st.text(new_data_kurir)
 
 result = ''.join([cito_lat, rute_kurir])
 
