@@ -35,6 +35,7 @@ result = ''.join([cito_lat, rute_kurir])
 
 #rec_1=data_kurir.to_dict('records')
 st.text(konid)
+st.text(len(konid))
 
 #rec_2=data_kurir.to_dict('dict')
 #st.text(rec_2)
