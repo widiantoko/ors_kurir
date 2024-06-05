@@ -27,6 +27,13 @@ data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
 rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 rute_kurir = ';'.join(rute_kiriman)
 
+
+option = st.selectbox(
+    "Nama Kurir:",
+    new['Nama Kurir'])
+
+st.write("You selected:", option)
+
 #pin_kiriman=data_kurir.apply(lambda row: f"({row['Lat_dest']},{row['Long_dest']})", axis=1).tolist()
 #coords_tuples = [eval(coord) for coord in pin_kiriman]
 
