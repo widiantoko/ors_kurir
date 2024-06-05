@@ -31,15 +31,15 @@ konid=data_kurir.apply(lambda row: f"{row['No. Connote']}; {row['jam']}", axis=1
 
 result = ''.join([cito_lat, rute_kurir])
 
-rec_1=data_kurir.to_dict('records')
-st.text(rec_1)
+#rec_1=data_kurir.to_dict('records')
+st.text(coords_tuples)
 
 
-rec_2=data_kurir.to_dict('dict')
-st.text(rec_2)
+#rec_2=data_kurir.to_dict('dict')
+#st.text(rec_2)
 
-rec_3=data_kurir.to_dict('list')
-st.text(rec_3)
+#rec_3=data_kurir.to_dict('list')
+#st.text(rec_3)
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
@@ -91,12 +91,12 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-#for loc in coords_tuples:
-#        folium.Marker(location=loc, tooltip=konid, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+for loc in coords_tuples:
+        folium.Marker(location=loc, tooltip=konid, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
 #for loc in rec_3:
-folium.Marker(location=[loc['Lat_dest'], loc['Long_dest']], tooltip=loc['No Connote'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
+#        folium.Marker(location=[loc['Lat_dest'], loc['Long_dest']], tooltip=loc['No Connote'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
 
 
