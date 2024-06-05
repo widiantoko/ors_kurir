@@ -39,6 +39,10 @@ opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
+        
+
+
+
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
 
@@ -47,11 +51,7 @@ new_data = new[mask]
 
 st.table(new_data)
 
-if new_data == None:
-        None
-else:
-        xyx=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
-
+xyx=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
 new_data_kurir = ';'.join(xyx)
