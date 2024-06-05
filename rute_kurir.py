@@ -40,7 +40,7 @@ st.text(rec)
 
 
 list_of_tuples = [tuple(x) for x in data_kurir.values]
-print(list_of_tuples)
+st.text(list_of_tuples)
 
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
