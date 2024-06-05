@@ -35,7 +35,7 @@ rec=data_kurir.to_dict('records')
 st.text(rec)
 
 
-rec_2=data_kurir.values.tolist()
+rec_2=data_kurir.to_dict('records')
 st.text(rec_2)
 
 
