@@ -32,7 +32,7 @@ st.text(konid)
 
 #st.text(konid_1)
 
-record=data_kurir.to_csv()
+record=data_kurir.to_dict()
 st.text(record)
 
 result = ''.join([cito_lat, rute_kurir])
