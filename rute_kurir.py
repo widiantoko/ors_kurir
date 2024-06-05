@@ -111,7 +111,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 
-st_data=st_folium(mx, width=900)
+#st_data=st_folium(mx, width=900)
 
 
 
