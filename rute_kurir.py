@@ -88,10 +88,16 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
               icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
 
+#for loc in coords_tuples:
+#        folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
-for loc in coords_tuples:
-        folium.Marker(location=loc, tooltip=tooltip, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
-
+for index, row in data_kurir.iterrows():
+    folium.Marker(
+        location=[row['Lat_dest'], row['Long_dest']],
+        popup=row['Popup'],
+        tooltip=folium.Tooltip(row['No. Connote']),
+        icon=folium.Icon(icon='info-sign')
+    ).add_to(mx)
 
        
 #for loc in pin_new:
