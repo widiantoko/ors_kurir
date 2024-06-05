@@ -81,8 +81,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito, icon = folium.Icon(color='r
 
 
 for loc in coords_tuples:
-        for cn in konid:
-                folium.Marker(location=loc, tooltip=cn, icon = folium.Icon(color='green', icon_color='white',prefix='fa', icon='envelope')
+        folium.Marker(location=loc, tooltip=konid, icon = folium.Icon(color='green', icon_color='white',prefix='fa', icon='envelope')
                       ).add_to(mx)
 
 
