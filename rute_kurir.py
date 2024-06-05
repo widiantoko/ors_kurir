@@ -16,7 +16,7 @@ data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
-#st.dataframe(new.head(20))
+
 
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
@@ -34,10 +34,12 @@ urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_dup
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
+new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
-st.dataframe(new_data)
+#st.dataframe(new_data)
+st.dataframe(new.head(20))
 
 new_data_kiriman= new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
 new_data_kurir = ';'.join(new_data_kiriman)
