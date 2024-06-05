@@ -96,8 +96,8 @@ for index, row in data_kurir.iterrows():
         location=[row['Lat_dest'], row['Long_dest']],
         tooltip= 
         f"""<p style='color:#3288bd; text-align:center; border-radius:1px; 
-#        font-size:30px; line-height:10px; padding-top:20px'>{row['No. Connote']}""",
-fontsize= 20,
+        font-size:30px; line-height:10px; padding-top:20px'>{row['No. Connote']}""",
+
         icon=folium.Icon(icon_color='white', prefix='fa',icon='envelope')).add_to(mx)
 
        
