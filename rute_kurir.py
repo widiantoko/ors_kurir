@@ -81,7 +81,7 @@ folium.plugins.Fullscreen().add_to(mx)
 AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white', dash_array=[30,30]).add_to(mx)
 
 
-tooltip = folium.Tooltip(data_kurir['No. Connote'], permanent=True)
+tooltip = folium.Tooltip(konid, permanent=True)
 
 
 folium.Marker(location=cito_loc, tooltip= text_Cito, 
