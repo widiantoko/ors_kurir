@@ -39,10 +39,6 @@ st.text(rec)
 #st.text(rec_2)
 
 
-list_of_tuples = [tuple(x) for x in data_kurir]
-st.text(list_of_tuples)
-
-
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
 response_A = requests.get(url_A)
