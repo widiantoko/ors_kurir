@@ -102,7 +102,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 for index, row in new.iterrows():
     folium.Marker(
-        location=[row['Lat_dest'], row['Long_dest']],
+        location=[row['Lat'], row['Long']],
         tooltip= 
         f"""<p style='color:#3288bd; text-align:center; border-radius:1px; 
         font-size:12px; line-height:1px; padding-top:3px'>{row['No. Connote']}""",
