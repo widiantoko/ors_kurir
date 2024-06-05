@@ -40,7 +40,7 @@ opt_tgl = st.selectbox(
 
 #st.write("You selected:", opt_kurir)
 
-new1=new[new['Nama Kurir']==opt_kurir and new['Tgl']==opt_tgl]
+new1=new[new['Nama Kurir']==opt_kurir | new['Tgl']==opt_tgl]
 
 st.dataframe(new1)
 
