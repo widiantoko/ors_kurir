@@ -30,9 +30,7 @@ coords_tuples = [eval(coord) for coord in pin_kiriman]
 pin_new=data_kurir.apply(lambda row: f"{row['Lat_dest']},{row['Long_dest']}", axis=1).tolist()
 
 
-
-
-konid=data_kurir.apply(lambda row: f"{row['No. Connote']}; {row['jam']}", axis=1).tolist()
+konid=data_kurir.apply(lambda row: f"{row['No. Connote']}", axis=1).tolist()
 
 result = ''.join([cito_lat, rute_kurir])
 
@@ -97,7 +95,7 @@ folium.Marker(location=cito_loc, tooltip= text_Cito,
 
 
 for loc in coords_tuples:
-        for x in data_kurir['No. Connote']:
+        for x in konid:
                 folium.Marker(location=loc, tooltip=x, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
 
        
