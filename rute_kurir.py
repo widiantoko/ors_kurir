@@ -124,7 +124,7 @@ else:
         location=[row['Lat'], row['Long']],
         tooltip= 
         f"""<p style='color:#3288bd; text-align:center; border-radius:1px; 
-        font-size:12px; line-height:1px; padding-top:3px'>{row['No. Connote']}""",
+        font-size:12px; line-height:1px; padding-top:3px'>{row['No. Connote']} - {row['jam']}""",
 
         icon=folium.Icon(icon_color='white', prefix='fa',icon='envelope')).add_to(mx)
 
