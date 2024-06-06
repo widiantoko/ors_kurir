@@ -42,8 +42,9 @@ opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 def mask(opt_kurir, opt_tgl):
         try: 
                 len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
-                if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
-                        return  new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
+                return st.text(len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)))
+                #if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
+                #        return  new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
         except:
                exit
 
