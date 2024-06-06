@@ -39,8 +39,16 @@ new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
+def mask(opt_kurir, opt_tgl):
+        try: 
+                len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
+                if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
+                        return  new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
+        except:
+               None
 
-mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+
+#mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
         
 
@@ -59,7 +67,7 @@ st.dataframe(new_data)
 new_data_loc=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
-new_data_kurir = ';'.join(new_data_loc)
+new_data_kurir = ';'.join(new_data_loc) 
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
@@ -70,7 +78,7 @@ result = ''.join([cito_lat, new_data_kurir])
 
 
 st.text(result)
-st.text(new_data_kurir)
+#st.text(new_data_kurir) = tdk perlu
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
@@ -82,6 +90,7 @@ jarak_A=round(data_A['routes'][0]['distance']/1000,2)
 
 
 koordinat_trip_A = polyline.decode(lokasi_A)
+
 
 
 st.text(f"Estimasi Jarak Tempuh Kurir {jarak_A} Km")
