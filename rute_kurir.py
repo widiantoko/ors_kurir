@@ -48,7 +48,7 @@ new_data = new[mask]
         
                 
 if len(new_data)==0:
-        exit
+        st.metric("Tidak ada delivery")
 else:
              
 
