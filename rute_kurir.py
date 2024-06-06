@@ -39,18 +39,22 @@ new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
-def mask(opt_kurir, opt_tgl):
+
+
+mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+
+        
+def new_data(opt_kurir, opt_tgl):
         try: 
-                len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))
-                return st.text(len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)))
+                len(new_data)
+                return st.text(len(new_data))
                 #if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
                 #        return  new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
         except:
                exit
 
-#mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
-        
+
 
 #def pjg(opt_kurir, opt_tgl):
 #    try:
