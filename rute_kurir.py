@@ -47,8 +47,8 @@ new_data = new[mask]
 #def new_data01(opt_kurir, opt_tgl):
         
                 
-if len(new_data())== 0:
-                exit
+if len(new_data())==0:
+        exit
 else:
              
 
