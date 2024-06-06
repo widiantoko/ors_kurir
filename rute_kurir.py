@@ -44,12 +44,12 @@ opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]        
 
-def new_data01(opt_kurir, opt_tgl):
+#def new_data01(opt_kurir, opt_tgl):
         
                 
-        if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))== 0:
+if len(new_data())== 0:
                 exit
-        else:
+else:
              
 
                 st.dataframe(new_data)
