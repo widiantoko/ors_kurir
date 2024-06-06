@@ -42,7 +42,7 @@ x=len(new_data)
                 
 if len(new_data)==0:
 
-        st.text("Tidak ada delivery")
+        st.text("Tidak ada kiriman yang diupdate pada tanggal {opt_tgl}")
 
 else:
              
@@ -71,7 +71,7 @@ else:
 
         #st.dataframe(new_data)
 
-        st.text(f"Jumlah kiriman {x} pcs, dengan estimasi Jarak Tempuh Kurir {jarak_A} Km")
+        st.text(f"Jumlah kiriman {x} pcs, dengan estimasi jarak tempuh kurir {jarak_A} Km")
 
 
         mx = folium.Map(location=cito_loc, zoom_start=12)
