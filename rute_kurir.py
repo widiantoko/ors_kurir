@@ -45,8 +45,7 @@ def mask(opt_kurir, opt_tgl):
                 if len((new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl))>0:
                         return  new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
         except:
-               None
-
+               return 0
 
 #mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
