@@ -48,7 +48,8 @@ new_data = new[mask]
         
                 
 if len(new_data)==0:
-        st.metric("Tidak ada delivery")
+        st.text("Tidak ada delivery")
+
 else:
              
 
