@@ -12,7 +12,6 @@ import pandas as pd
 
 st.subheader("Simulasi Rute Delivery Kurir")
 
-#data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
@@ -24,12 +23,6 @@ new=pd.read_excel('data/new.xlsx')
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
 
-#data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
-
-
-#rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
-#rute_kurir = ';'.join(rute_kiriman)
-#rute_new= new.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
 
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
@@ -44,7 +37,7 @@ opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]        
 
-#def new_data01(opt_kurir, opt_tgl):
+
 x=len(new_data)        
                 
 if len(new_data)==0:
@@ -107,9 +100,6 @@ else:
                 icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
 
-#for loc in coords_tuples:
-#        folium.Marker(location=loc, icon=folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
-
 
 
         for index, row in new_data.iterrows():
@@ -122,10 +112,6 @@ else:
         icon=folium.Icon(icon_color='white', prefix='fa',icon='envelope')).add_to(mx)
 
        
-#for loc in pin_new:
-#        folium.Marker(location=loc['koord'], tooltip=loc['jam'], icon = folium.Icon(color='green', icon_color='white', prefix='fa', icon='envelope', shadow_size=(0,0))).add_to(mx)
-
-
 
         st_data=st_folium(mx, width=900)
 
