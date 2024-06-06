@@ -48,49 +48,50 @@ new_data = new[mask]
         
                 
 if len(new_data)==0:
+
         st.text("Tidak ada delivery")
 
 else:
              
 
-                st.dataframe(new_data)
+        st.dataframe(new_data)
 
-                new_data_loc=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
+        new_data_loc=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
-                new_data_kurir = ';'.join(new_data_loc) 
+        new_data_kurir = ';'.join(new_data_loc) 
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
 #st.text(new_data_kurir)
 
 #result = ''.join([cito_lat, rute_kurir])
-                result = ''.join([cito_lat, new_data_kurir])
+        result = ''.join([cito_lat, new_data_kurir])
 
 
-                st.text(result)
+        st.text(result)
 #st.text(new_data_kurir) = tdk perlu
 
-                url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
+        url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
-                response_A = requests.get(url_A)
-                data_A = response_A.json()
+        response_A = requests.get(url_A)
+        data_A = response_A.json()
 
-                lokasi_A=data_A['routes'][0]['geometry']
-                jarak_A=round(data_A['routes'][0]['distance']/1000,2)
-
-
-                koordinat_trip_A = polyline.decode(lokasi_A)
+        lokasi_A=data_A['routes'][0]['geometry']
+        jarak_A=round(data_A['routes'][0]['distance']/1000,2)
 
 
-
-                st.text(f"Estimasi Jarak Tempuh Kurir {jarak_A} Km")
-
-
-                mx = folium.Map(location=cito_loc, zoom_start=12)
+        koordinat_trip_A = polyline.decode(lokasi_A)
 
 
-                text_Cito=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
+
+        st.text(f"Estimasi Jarak Tempuh Kurir {jarak_A} Km")
+
+
+        mx = folium.Map(location=cito_loc, zoom_start=12)
+
+
+        text_Cito=f"""<p style='color:#3288bd; text-align:center; border-radius:3px; 
                 font-size:12px; line-height:1px; padding-top:3px'>CitoXpress"""
 
 
@@ -102,14 +103,14 @@ else:
 #        font-size:12px; line-height:3px; padding-top:8px'>{jarak2} km"""
 
 
-                folium.plugins.Fullscreen().add_to(mx)
+        folium.plugins.Fullscreen().add_to(mx)
 
 
-                AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white', dash_array=[30,30]).add_to(mx)
+        AntPath(koordinat_trip_A, delay=600, weight=4, color='black', pulse_color='white', dash_array=[30,30]).add_to(mx)
 
 
 
-                folium.Marker(location=cito_loc, tooltip= text_Cito, 
+        folium.Marker(location=cito_loc, tooltip= text_Cito, 
                 icon = folium.Icon(color='red', icon_color='white',prefix='fa', icon='warehouse')).add_to(mx)
 
 
