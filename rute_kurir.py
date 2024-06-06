@@ -54,24 +54,17 @@ if len(new_data)==0:
 else:
              
 
-        #st.dataframe(new_data)
+    
 
         new_data_loc=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
         new_data_kurir = ';'.join(new_data_loc) 
 
-#st.text(rute_kiriman)
-#st.text(new_data_kiriman)
-#st.text(new_data_kurir)
-
-#result = ''.join([cito_lat, rute_kurir])
         result = ''.join([cito_lat, new_data_kurir])
 
 
-        st.text(result)
-#st.text(new_data_kurir) = tdk perlu
-
+        
         url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
         response_A = requests.get(url_A)
