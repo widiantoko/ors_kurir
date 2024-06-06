@@ -92,7 +92,7 @@ else:
         folium.plugins.Fullscreen().add_to(mx)
 
 
-        AntPath(koordinat_trip_A, delay=600, weight=4, color='red', pulse_color='red', dash_array=[30,30]).add_to(mx)
+        AntPath(koordinat_trip_A, delay=600, weight=4, color='red', pulse_color='white', dash_array=[30,30]).add_to(mx)
 
 
 
