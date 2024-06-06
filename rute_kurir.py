@@ -71,7 +71,7 @@ else:
 
         #st.dataframe(new_data)
 
-        st.text(f"Jumlah kiriman {x} pcs, dengan estimasi jarak tempuh kurir {jarak_A} Km")
+        st.write(f"Jumlah kiriman {x} pcs, dengan estimasi jarak tempuh kurir {jarak_A} Km")
 
 
         mx = folium.Map(location=cito_loc, zoom_start=12)
