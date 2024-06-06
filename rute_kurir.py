@@ -134,7 +134,7 @@ else:
 
 
 
-#st_data=st_folium(mx, width=900)
+        st_data=st_folium(mx, width=900)
 
 
 
