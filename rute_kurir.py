@@ -60,7 +60,7 @@ new_data = new[mask]
 
 #st.dataframe(new_data)
 
-st.table(new_data)
+st.dataframe(new_data)
 
 new_data_01=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
