@@ -16,7 +16,7 @@ st.subheader("Simulasi Rute Delivery Kurir")
 
 new=pd.read_excel('data/new.xlsx')
 
-new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
+
 
 
 
@@ -34,7 +34,7 @@ cito_loc=(-6.210011, 106.812288)
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
-
+new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
@@ -51,6 +51,7 @@ new_data = new[mask]
 #                return new[(new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)]
 #    except:
 #        None
+
 
 
 st.dataframe(new_data)
