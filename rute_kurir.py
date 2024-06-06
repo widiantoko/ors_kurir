@@ -42,7 +42,7 @@ x=len(new_data)
                 
 if len(new_data)==0:
 
-        st.text("Tidak ada kiriman yang diupdate pada tanggal {opt_tgl}")
+        st.text(f"Tidak ada kiriman yang diupdate pada tanggal {opt_tgl}")
 
 else:
              
