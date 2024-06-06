@@ -76,7 +76,7 @@ else:
 
         koordinat_trip_A = polyline.decode(lokasi_A)
 
-
+        st.dataframe(new_data)
 
         st.text(f"Jumlah kiriman {x} pcs, dengan estimasi Jarak Tempuh Kurir {jarak_A} Km")
 
