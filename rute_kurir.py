@@ -45,7 +45,7 @@ mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]        
 
 #def new_data01(opt_kurir, opt_tgl):
-        
+x=len(new_data)        
                 
 if len(new_data)==0:
 
@@ -78,7 +78,7 @@ else:
 
 
 
-        st.text(f"Estimasi Jarak Tempuh Kurir {jarak_A} Km")
+        st.text(f"Jumlah kiriman {x} pcs, dengan estimasi Jarak Tempuh Kurir {jarak_A} Km")
 
 
         mx = folium.Map(location=cito_loc, zoom_start=12)
