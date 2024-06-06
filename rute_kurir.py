@@ -12,11 +12,11 @@ import pandas as pd
 
 st.subheader("Simulasi Rute Delivery Kurir")
 
-data_kurir=pd.read_excel('data/test.xlsx')
+#data_kurir=pd.read_excel('data/test.xlsx')
 
 new=pd.read_excel('data/new.xlsx')
 
-
+new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 
 
@@ -24,23 +24,23 @@ new=pd.read_excel('data/new.xlsx')
 cito_lat='106.812288,-6.210011;'
 cito_loc=(-6.210011, 106.812288)
 
-data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
+#data_kurir['jam']=data_kurir['Waktu Listing'].str[11:]
 
 
-rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
-rute_kurir = ';'.join(rute_kiriman)
+#rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
+#rute_kurir = ';'.join(rute_kiriman)
 
 
-rute_new= new.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
+#rute_new= new.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
 
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
 urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
 
+
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
-new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]
@@ -55,17 +55,12 @@ new_data = new[mask]
 #        None
 
 
-
-
-
-#st.dataframe(new_data)
-
 st.dataframe(new_data)
 
-new_data_01=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
+new_data_loc=new_data.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist() 
 
 
-new_data_kurir = ';'.join(rute_new)
+new_data_kurir = ';'.join(new_data_loc)
 
 #st.text(rute_kiriman)
 #st.text(new_data_kiriman)
@@ -74,6 +69,9 @@ new_data_kurir = ';'.join(rute_new)
 #result = ''.join([cito_lat, rute_kurir])
 result = ''.join([cito_lat, new_data_kurir])
 
+
+st.text(result)
+st.text(new_data_kurir)
 
 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
