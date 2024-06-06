@@ -29,8 +29,6 @@ cito_loc=(-6.210011, 106.812288)
 
 #rute_kiriman= data_kurir.apply(lambda row: f"{row['Long_dest']},{row['Lat_dest']}", axis=1).tolist()
 #rute_kurir = ';'.join(rute_kiriman)
-
-
 #rute_new= new.apply(lambda row: f"{row['Long']},{row['Lat']}", axis=1).tolist()
 
 urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
