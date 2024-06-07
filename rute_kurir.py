@@ -9,22 +9,22 @@ import pandas as pd
 import streamlit_nested_layout
 
 
-with st.container():
-        st.set_page_config(page_title = "Simulasi Rute")
-        st.subheader("Simulasi Rute Delivery Kurir")
+container1=st.container()
+st.set_page_config(page_title = "Simulasi Rute")
+st.subheader("Simulasi Rute Delivery Kurir")
 
 
-        new=pd.read_excel('data/new.xlsx')
+new=pd.read_excel('data/new.xlsx')
 
 
-        cito_lat='106.812288,-6.210011;'
-        cito_loc=(-6.210011, 106.812288)
+cito_lat='106.812288,-6.210011;'
+cito_loc=(-6.210011, 106.812288)
 
 
-        urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
-        urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
+urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
+urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_duplicates(keep='last')
 
-        new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
+new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 
 col1, col2= st.columns(2)
@@ -36,20 +36,20 @@ with col2:
         opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
-with st.container():
+container2=st.container()
 
-        mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
-        new_data = new[mask]        
+mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+new_data = new[mask]        
 
 
 
-        x=len(new_data)        
+x=len(new_data)        
                 
-        if len(new_data)==0:
+if len(new_data)==0:
 
-                st.text(f"Tidak ada kiriman yang diupdate oleh {opt_kurir} pada tanggal {opt_tgl}")
+        st.text(f"Tidak ada kiriman yang diupdate oleh {opt_kurir} pada tanggal {opt_tgl}")
 
-        else:
+else:
              
 
     
