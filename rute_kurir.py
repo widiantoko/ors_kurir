@@ -13,7 +13,7 @@ import pandas as pd
 
 
 with st.container():
-        st.set_page_config(page_title = "Simulasi Rute")
+        #st.set_page_config(page_title = "Simulasi Rute")
         st.subheader("Simulasi Rute Delivery Kurir")
 
 
