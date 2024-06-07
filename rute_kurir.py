@@ -31,15 +31,16 @@ urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_dup
 new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 
+col1, col2= st.columns(2)
+
+with col1:
+        opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
+
+with col2:
+        opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
-opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
-
-
-opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
-
-
-
+with st.container(1)
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]        
 
