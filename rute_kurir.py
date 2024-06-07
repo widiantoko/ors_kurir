@@ -9,11 +9,11 @@ import pandas as pd
 
 
 
-
+st.set_page_config(page_title = "Simulasi Rute", layout="centered")
 
 
 with st.container():
-        st.set_page_config(page_title = "Simulasi Rute", layout="centered")
+      
         st.subheader("Simulasi Rute Delivery Kurir")
 
 
