@@ -8,7 +8,7 @@ import polyline
 import pandas as pd
 #import streamlit_nested_layout
 
-con1, con2 = st.container()
+con1=st.container()
 
 with con1:
 
@@ -39,6 +39,7 @@ with con1:
                 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
+con2=st.container()
 with con2:
 
         mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
