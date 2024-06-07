@@ -9,7 +9,7 @@ import pandas as pd
 import streamlit_nested_layout
 
 
-container1=st.container()
+#container1=st.container()
 st.set_page_config(page_title = "Simulasi Rute")
 st.subheader("Simulasi Rute Delivery Kurir")
 
@@ -36,7 +36,7 @@ with col2:
         opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
-container2=st.container()
+#container2=st.container()
 
 mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
 new_data = new[mask]        
