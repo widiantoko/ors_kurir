@@ -10,7 +10,7 @@ import streamlit_nested_layout
 
 
 
-st.set_page_config(page_title = "Simulasi Rute", layout = "wide")
+st.set_page_config(page_title = "Simulasi Rute")
 st.subheader("Simulasi Rute Delivery Kurir")
 
 
