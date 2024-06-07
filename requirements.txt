@@ -37,4 +37,4 @@ openpyxl==3.1.2
 osrm-py==0.5
 gmaps==0.9.0
 googlemaps==4.10.0
-streamlit-nested-layout==0.1.3
+
