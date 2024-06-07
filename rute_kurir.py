@@ -8,9 +8,9 @@ import polyline
 import pandas as pd
 #import streamlit_nested_layout
 
-con1=st.container()
 
-with con1:
+
+with st.container():
 
 #container1=st.container()
         st.set_page_config(page_title = "Simulasi Rute")
@@ -39,8 +39,7 @@ with con1:
                 opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
-con2=st.container()
-with con2:
+with st.container():
 
         mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
         new_data = new[mask]        
