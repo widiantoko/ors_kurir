@@ -40,13 +40,13 @@ with col2:
         opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
-with st.container(1):
-        mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
-        new_data = new[mask]        
+
+mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+new_data = new[mask]        
 
 
 
-        x=len(new_data)        
+x=len(new_data)        
                 
 if len(new_data)==0:
 
