@@ -32,22 +32,22 @@ new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
 outer_cols = st.columns([1, 1])
 
-with outer_cols[0]:
-        opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 
-with outer_cols[1]:
-        opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
+opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
 
-with st.container(1):
 
-        mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
-        new_data = new[mask]        
+opt_tgl = st.selectbox("Tanggal Delivery:", urut_tgl)
 
 
 
+mask = (new['Nama Kurir']== opt_kurir) & (new['Tgl']==opt_tgl)
+new_data = new[mask]        
 
 
-        x=len(new_data)        
+
+
+
+x=len(new_data)        
                 
 if len(new_data)==0:
 
