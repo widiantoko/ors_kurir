@@ -30,7 +30,7 @@ urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").sort_values(ascending=True).drop_dup
 
 new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
-outer_cols = st.columns([1, 1])
+
 
 
 opt_kurir = st.selectbox("Nama Kurir:",urut_nama)
