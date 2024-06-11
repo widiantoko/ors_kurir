@@ -56,7 +56,7 @@ with st.container():
 
                 result = ''.join([cito_lat, new_data_kurir])
 
-                @st.cache_data(ttl=600)
+                @st.cache_data(ttl=300)
                 def load_data(url_A):
                         
                         df = url_A
