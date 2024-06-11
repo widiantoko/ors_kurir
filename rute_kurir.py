@@ -56,7 +56,11 @@ with st.container():
 
                 result = ''.join([cito_lat, new_data_kurir])
 
-
+                @st.cache_data
+                def load_data(url_A):
+                        
+                        df = url_A
+                        return df
         
                 url_A=f"""http://router.project-osrm.org/route/v1/motorcycle/{result}?overview=full"""
 
