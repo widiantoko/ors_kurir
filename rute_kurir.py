@@ -24,9 +24,9 @@ with st.container():
 
 
         urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
-        urut_tgl_old=new['Tgl'].dt.strftime("%d-%b-%Y").drop_duplicates(keep='last')
+        urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").drop_duplicates(keep='last')
         #urut_tgl=urut_tgl_old.sort_values(ascending=True) 
-        urut_tgl=pd.to_datetime(urut_tgl_old).sort_values(ascending=True) 
+        #urut_tgl=pd.to_datetime(urut_tgl_old).sort_values(ascending=True) 
 
 
         new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
