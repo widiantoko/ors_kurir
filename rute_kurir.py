@@ -28,7 +28,7 @@ with st.container():
         #urut_tgl=urut_tgl_old.sort_values(ascending=True) 
         #urut_tgl=pd.to_datetime(urut_tgl_old).sort_values(ascending=True) 
 
-        sorted(urut_tgl, key = lambda x: pd.to_datetime(x, format='%d-%b-%Y'))
+        st.text(sorted(urut_tgl, key = lambda x: pd.to_datetime(x, format='%d-%b-%Y')))
 
         st.text(sorted(urut_tgl))
 
