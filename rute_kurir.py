@@ -24,7 +24,7 @@ with st.container():
 
 
         urut_nama= new['Nama Kurir'].drop_duplicates(keep='last').sort_values(ascending=True)
-        urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").drop_duplicates(keep='last').sort_values(ascending=False) 
+        urut_tgl=new['Tgl'].dt.strftime("%d-%b-%Y").drop_duplicates(keep='last').sort_values(ascending=True, inplace=True) 
 
         new['Tgl']=new['Tgl'].dt.strftime("%d-%b-%Y")
 
