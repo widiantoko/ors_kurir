@@ -39,3 +39,4 @@ gmaps==0.9.0
 googlemaps==4.10.0
 altair==4.2.2
 streamlit-nightly==1.39.1.dev20241011
+vega-datasets==0.9.0
