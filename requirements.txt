@@ -78,7 +78,7 @@ opencage==                  2.3.0
 openpyxl==                  3.1.2
 osrm-py==                   0.5
 packaging==                 23.1
-pandas==                    2.0.3
+#pandas==                    2.0.3
 pandas-bokeh==              0.5.5
 parse==                     1.20.2
 parso==                     0.8.4
