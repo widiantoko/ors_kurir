@@ -55,5 +55,5 @@ zipp==3.16.2
 Pygments==2.16.1
 mdurl==0.1.2
 rich==14.1.0
-markdown-it-py 4.0.0
+markdown-it-py==4.0.0
 
