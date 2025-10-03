@@ -46,7 +46,7 @@ streamlit-echarts==0.4.0
 streamlit_folium==0.20.0
 streamlit-nightly==1.39.1.dev20241011
 streamlit-option-menu==0.4.0
-streamlit_pandas==0.0.9
+#streamlit_pandas==0.0.9
 toml==0.10.2
 tqdm==4.66.4
 typing-extensions==4.7.1
