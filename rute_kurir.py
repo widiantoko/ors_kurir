@@ -2,12 +2,8 @@ import folium
 import folium.plugins
 from folium.plugins import AntPath
 import streamlit as st
-
-import streamlit as st
-import folium
 from streamlit_folium import st_folium
-from streamlit_folium import folium_static
-import folium
+#from streamlit_folium import folium_static
 import requests
 import polyline
 import pandas as pd
